@@ -20,13 +20,18 @@ margin: 0 ;
 html,body{
     height: 100%;
     
+    
+}
+
+#test{
+
+width: 110%;
 }
 
 .slide{
     width: 100%;
     min-height: 100vh;
     position: relative;
-   
 
 }
 nav{
@@ -545,10 +550,22 @@ footer{
     justify-content: space-around;
     align-items: center;
 }
+.CV{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    font-size: 12pt;
+    align-items: center;
+}
+.CV p{
+    margin-left: 20px;
+}
 #logoFooter{
+    
     height: 80%;
-    margin-left: 50px;
+    
     background-image: url(images/logoFooter.png);
+    background-size: contain;
     background-repeat: no-repeat
 
 }
@@ -556,6 +573,7 @@ footer{
     display: flex;
     flex-wrap: wrap;
     height: 100px;
+    text-align: center;
 }
 #condition a{
     text-decoration: none;
@@ -633,6 +651,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 #menuResponsive ul{
     margin-left:0;
@@ -793,6 +812,7 @@ footer{
         width: 80%;
         font-size: 24pt;
         margin: 0 auto;
+        text-align: center;
     }
 
    .ligne{
@@ -816,6 +836,7 @@ footer{
        height: 20vh;
        color: white;
    }
+   
    .txt h6{
        font-family: var(--script);
         font-size: 18pt;
