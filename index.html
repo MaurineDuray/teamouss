@@ -20,17 +20,102 @@
             })
         
 
+        const home = document.querySelector("#accueil")
+        const about = document.querySelector("#apropos")
+        const product = document.querySelector("#nosproduits")
+        const trouver = document.querySelector("#noustrouver")
+        const contact = document.querySelector("#contact")
+        
+        const trait1 = document.querySelector("#niveau #t1")
+        const trait2 = document.querySelector("#niveau #t2")
+        const trait3 = document.querySelector("#niveau #t3")
+        const trait4 = document.querySelector("#niveau #t4")
+        const trait5 = document.querySelector("#niveau #t5")
+
+        const A = document.querySelector("#A")
+        const B = document.querySelector("#B")
+        const C = document.querySelector("#C")
+        const D = document.querySelector("#D")
+        var scrolling 
+        window.addEventListener('scroll',()=>{
+            scrolling = document.documentElement.scrollTop || window.scrollY || window.pageYOffset || document.body.scrollTop
+
+            if(scrolling < about.offsetTop ){
+                trait1.classList.add("activ");
+                trait2.classList.remove("activ");
+                trait3.classList.remove("activ");
+                trait4.classList.remove("activ");
+                trait5.classList.remove("activ");
+
+                A.classList.remove("souligne");
+                B.classList.remove("souligne");
+                C.classList.remove("souligne");
+                D.classList.remove("souligne");
+
+            }else if((scrolling > about.offsetTop - 100)&(scrolling < product.offsetTop - 100)){
+                trait1.classList.remove("activ");
+                trait2.classList.add("activ");
+                trait3.classList.remove("activ");
+                trait4.classList.remove("activ");
+                trait5.classList.remove("activ");
+
+                A.classList.add("souligne");
+                B.classList.remove("souligne");
+                C.classList.remove("souligne");
+                D.classList.remove("souligne");
+
+
+            }else if((scrolling > product.offsetTop - 100)&(scrolling <trouver.offsetTop - 100)){
+                trait1.classList.remove("activ");
+                trait2.classList.remove("activ");
+                trait3.classList.add("activ");
+                trait4.classList.remove("activ");
+                trait5.classList.remove("activ");
+
+                A.classList.remove("souligne");
+                B.classList.add("souligne");
+                C.classList.remove("souligne");
+                D.classList.remove("souligne");
+
+            }else if((scrolling > trouver.offsetTop - 100)&(scrolling <contact.offsetTop - 100)){
+                trait1.classList.remove("activ");
+                trait2.classList.remove("activ");
+                trait3.classList.remove("activ");
+                trait4.classList.add("activ");
+                trait5.classList.remove("activ");
+
+                A.classList.remove("souligne");
+                B.classList.remove("souligne");
+                C.classList.add("souligne");
+                D.classList.remove("souligne");
+
+            }else if(scrolling > contact.offsetTop - 100){
+                trait1.classList.remove("activ");
+                trait2.classList.remove("activ");
+                trait3.classList.remove("activ");
+                trait4.classList.remove("activ");
+                trait5.classList.add("activ");
+
+                A.classList.remove("souligne");
+                B.classList.remove("souligne");
+                C.classList.remove("souligne");
+                D.classList.add("souligne");
+            }
+            
+        })
+
+
     })
 </script>
 <body>
     <nav>
         <a id="home" href="#accueil"></a>
         <ul>
-            <li><a href="#apropos">À propos</a></li>
-            <li><a href="#nosproduits">Nos produits</a></li>
+            <li id="A"><a href="#apropos">À propos</a></li>
+            <li id="B"><a href="#nosproduits">Nos produits</a></li>
             <li id="menuAccueil"><a href="#accueil"></a></li>
-            <li><a href="#noustrouver">Nous trouver</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li id="C"><a href="#noustrouver">Nous trouver</a></li>
+            <li id="D"><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -57,11 +142,11 @@
     </div>
 
     <div id="niveau">
-        <div class="trait" id="actif"></div>
-        <div class="trait"></div>
-        <div class="trait"></div>
-        <div class="trait"></div>
-        <div class="trait"></div>
+        <div class="trait" id="t1"></div>
+        <div class="trait" id="t2"></div>
+        <div class="trait" id="t3"></div>
+        <div class="trait" id="t4"></div>
+        <div class="trait" id="t5"></div>
     </div>
 
    
@@ -227,24 +312,26 @@
         <div class="titre">
             <h3>Trouver un point de vente</h3>
         </div>
-        <div class="left">
-            <div id="cadre"></div>
-            <div id="carte"></div>
-        </div>
-        <div class="right" id="tmagasin">
-            <div class="margin">
-                <h3>Jusqu’à 3 magasins et au moins 10 revendeurs </h3>
-                <p>Pour trouver les produits TEA ’ MOUSSE, rendez-vous dans les magasins Tealou et dans les différents points de vente revendeurs de nos produits...</p>
-                <p>Cliquez sur les points de la carte pour connaître les bonnes adresses! </p>
-          
-                <button><a href="#contact">Nous contacter</a></button>  
+        <div class="container">
+            <div class="left">
+                <div id="cadre"></div>
+                <div id="carte"></div>
             </div>
+            <div class="right" id="tmagasin">
+                <div class="margin">
+                    <h3>Jusqu’à 3 magasins et au moins 10 revendeurs </h3>
+                    <p>Pour trouver les produits TEA’MOUSSE, rendez-vous dans les magasins Tealou et dans les différents points de vente revendeurs de nos produits...</p>
+                    <p>Cliquez sur les points de la carte pour connaître les bonnes adresses! </p>
+            
+                    <button><a href="#contact">Nous contacter</a></button>  
+                </div>
 
-            <div id="adresse">
-                <h3>Boutique Tealou</h3>
-                <p>Rue Noir Mouchon 80,</p>
-                <p>7850  Petit-Enghien</p>
-                <p>Tel : 024567894</p>
+                <div id="adresse">
+                    <h3>Boutique Tealou</h3>
+                    <p>Rue Noir Mouchon 80,</p>
+                    <p>7850  Petit-Enghien</p>
+                    <p>Tel : 024567894</p>
+                </div>
             </div>
         </div>
     </div>
