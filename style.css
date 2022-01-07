@@ -571,13 +571,13 @@ footer{
     font-size: 12pt;
     align-items: center;
 }
-.CV p{
-    margin-left: 20px;
-}
+
 #logoFooter{
     
-    height: 80%;
-    
+    height: 70px;
+    width: 70px;
+    padding: 0px 20px 0px 20px;
+    box-sizing: border-box;
     background-image: url(images/logoFooter.png);
     background-size: contain;
     background-repeat: no-repeat
@@ -607,8 +607,8 @@ footer{
     
 }
 .res{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background-color: white;
     margin :10px;
@@ -750,6 +750,13 @@ footer{
     .left{
         height: 60vh;
     }
+    .vide{
+        display: none;
+    }
+    .contenu{
+        display: flex;
+        flex-wrap: wrap;
+    }
 
 }
 @media all and (max-width:550px){
@@ -758,9 +765,7 @@ footer{
         right: 10px;
     }
    
-    #contact{
-        display: none;
-    }
+   
     
     
     #ongletMenu{
@@ -875,4 +880,64 @@ footer{
    #question{
        margin-top: 50px;
    }
+
+
+
+   .vide{
+       display: none;
+   }
+   
+   #contenu{
+        display: inline;
+        height: auto;
+   }
+   #formulaire{
+    width: 80%;
+    margin-left: 50%;
+    margin-top: 50px;
+    transform: translateX(-50%);
+   
+    padding-bottom: 20px;
+   }
+
+   #magasins{
+       padding-bottom: 50px;
+   }
+
+   footer{
+       position: relative;
+       display: flex;
+       flex-wrap: wrap;
+       height: auto;
+       padding: 20px 0px 20px 0px;
+       
+       margin: 0;
+   }
+   .CV{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+   }
+   #copy{
+       position: relative;
+       display:flex;
+       flex-wrap: wrap;
+
+    }
+    .infos{
+        padding: 0px !important;
+        text-align: center;
+        margin: 0px !important;
+    }
+    #condition{
+        padding-top: 30px;
+    }
+    #menuCopy ul{
+        margin: 0;
+        padding:0;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
 }
