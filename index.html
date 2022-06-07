@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     
 </head>
-</head>
+
 <script>
     window.addEventListener("load",()=>{
 
@@ -19,6 +19,14 @@
                 menu.classList.toggle("menuON");
             })
         
+            
+            const links = document.querySelectorAll(".items")
+           
+            links.forEach(link => {
+                link.addEventListener('click',()=>{
+                    menu.classList.remove("menuON");
+                })
+            })
 
         const home = document.querySelector("#accueil")
         const about = document.querySelector("#apropos")
@@ -106,8 +114,19 @@
 
 
     })
+    
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
+<script src="app.js"></script>
 <body>
+
+    <div class="load-container">
+        <div class="anim-bloc">
+            <img src="images/AnimTeaMousse.gif" alt="logo animé">
+        </div>
+    </div>
+
+
     <nav>
         <a id="home" href="#accueil"></a>
         <ul>
@@ -124,22 +143,18 @@
 
         <div id="menuResponsive">
             <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#apropos">À propos</a></li>
-                <li><a href="#nosproduits">Nos produits</a></li>
-                <li><a href="#noustrouver">Nous trouver</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#accueil" class="items">Accueil</a></li>
+                <li><a href="#apropos" class="items">À propos</a></li>
+                <li><a href="#nosproduits" class="items">Nos produits</a></li>
+                <li><a href="#noustrouver" class="items">Nous trouver</a></li>
+                <li><a href="#contact" class="items">Contact</a></li>
             </ul>
 
         </div>
 
   
 
-    <div id="reseauxSociaux"> 
-        <div class="rond"><img src="images/facebook.png" alt=""></div>
-        <div class="rond"><img src="images/pinterst.png" alt=""></div>
-        <div class="rond"><img src="images/insta.png" alt=""></div>
-    </div>
+   
 
     <div id="niveau">
         <div class="trait" id="t1"></div>
@@ -153,15 +168,22 @@
 
     <div id="accueil" class="slide">
         <div id="log"><img src="images/logoAccueil.png" alt=""></div>
+        <h4> - Made in Belgium - </h4>
         <div id="decouvrir"> <a href="#apropos"><img src="images/flèches.png" alt=""> EN DÉCOUVRIR PLUS</a></div>
+        
+        <div id="reseauxSociaux"> 
+        <div class="rond"><a href="https://www.facebook.com/TeamousseBelgique" target="_blank"><img src="images/facebook.png" alt=""></a></div>
+        <div class="rond"><img src="images/pinterst.png" alt=""></div>
+        <div class="rond"><img src="images/insta.png" alt=""></div>
+    </div>
     </div>
 
 
     <div id="apropos" class="slide">
         <div id="dicton">
-            <p class="baton">100% artisanal</p>
-            <p class="baton">100% naturel</p>
-            <p class="script">Ils en moussent pour vous</p>
+            <p class="baton">100% artisanal,</p>
+            <p class="baton">100% naturel,</p>
+            <p class="script">Ils en moussent <br>pour vous !</p>
         </div>
 
         <div id="texte">
@@ -173,7 +195,7 @@
             <div class="right">
                 <div class="margin">
                 <h3>Une idée qui a bien infusé !</h3>
-                <p><b>TEA‘MOUSSE</b> est une petite entreprise locale née en 2021, qui se veut écoresponsable et durable.La marque offre donc une marque de <b>savons aux thés Tealou.</b></p>
+                <p><b>TEA‘MOUSSE</b> est une petite entreprise locale née en 2021, qui se veut écoresponsable et durable. La marque offre donc une marque de <b>savons aux thés Tealou.</b></p>
                 <p>Le thé apporte douceur et <b>antioxydants</b> à la peau et permet d’apaiser les peaux sensibles, combinés à un dérivés de l’huile de coco, il <b>nourrit votre peau</b> tout en douceur.</p>
                 <p><b>L’idée</b> de créer cette marque nous est venue lors de la fabrication de savons,... lors de la prise au froid de mes savons je me suis fait un thé pour me détendre et l’idée m’est venue !  
                 </p>
@@ -186,95 +208,99 @@
     
     <div id="nosproduits" class="slide">
         <div class="titre">
-            <h3>Découvrez nos fragrances</h3>
+            <h2>Découvrez nos fragrances</h2>
         </div>
         
-        <div id="galerieR">
-            <div class="line">
-                <div class="txt">
-                    <h6>Le p'tit chouchou</h6>
-                    <p>Chouchou caramel</p>
-                    <p class="prix">6,5€</p>
-                    <div id="gout1" class="gout"></div> 
-                </div>
-            </div>
-            <div class="line">
-                <div class="txt">
-                    <h6>Le fripouille</h6>
-                    <p>Bêtise d'Eulalie</p>
-                    <p class="prix">6,5€</p>
-                    <div id="gout2" class="gout"></div> 
-                </div>
-            </div>
-            <div class="line">
-                <div class="txt">
-                    <h6>Peau de pêche</h6>
-                    <p>Thé vert pêche</p>
-                    <p class="prix">6,5€</p>
-                    <div id="gout3"class="gout"></div>
-                </div>
-            </div>
-            <div class="line">
-                <div class="txt">
-                    <h6>Le réveil</h6>
-                    <p>Infusion petit Loïc</p>
-                    <p class="prix">6,5€</p>
-                    <div id="gout4" class="gout"></div>
-                </div>
-            </div>
-            <div class="line">
-                <div class="txt">
-                    <h6>Thé 'zen</h6>
-                    <p>Mystère lavande</p>
-                    <p class="prix">6,5€</p>
-                    <div id="gout5" class="gout"></div> 
-                </div>
-            </div>
-            <div class="line">
-                <div class="txt">
-                    <h6>Le fripouille</h6>
-                    <p>Bêtise d'Eulalie</p>
-                    <p class="prix">6,5€</p>
-                    <div id="gout6" class="gout"></div> 
-                </div>
-            </div>
-            <div class="line">
-                <div class="txt">
-                    <h6>L'exfoliant</h6>
-                    <p>Fruits rouges et graines</p>
-                    <p class="prix">6,5€</p>
-                    <div id="gout7" class="gout"></div>
-                </div>
-            </div>
+                            <div id="galerieR">
+                                <div class="line">
+                                    <div class="txt">
+                                        
+                                            <h6><a href="gout1.html">Le chouchou  </a></h6>
+                                    
+                                        <p>Chouchou caramel</p>
+                                        <p class="prix">6,5€</p>
+                                        <a href="gout1.html">
+                                            <div id="gout1" class="gout"> </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="line">
+                                    <div class="txt">
+                                        <h6><a href="gout2.html">Le fripouille</a></h6>
+                                        <p>Bêtise d'Eulalie</p>
+                                        <p class="prix">6,5€</p>
+                                        <a href="gout2.html"><div id="gout2" class="gout"></div></a> 
+                                    </div>
+                                </div>
+                                <div class="line">
+                                    <div class="txt">
+                                        <h6><a href="gout3.html">Peau de pêche</a></h6>
+                                        <p>Thé vert pêche Melba</p>
+                                        <p class="prix">6,5€</p>
+                                        <a href="gout3.html"><div id="gout3"class="gout"></div></a>
+                                    </div>
+                                </div>
+                                <div class="line">
+                                    <div class="txt">
+                                        <h6><a href="gout1.html">Le givré</a></h6>
+                                        <p>Infusion petit Loïc</p>
+                                        <p class="prix">6,5€</p>
+                                        <a href="gout4.html"><div id="gout4" class="gout"></div></a>
+                                    </div>
+                                </div>
+                                <div class="line">
+                                    <div class="txt">
+                                        <h6><a href="gout1.html">Thé'zen</a></h6>
+                                        <p>Mystère lavande</p>
+                                        <p class="prix">6,5€</p>
+                                        <a href="gout5.html"><div id="gout5" class="gout"></div></a> 
+                                    </div>
+                                </div>
+                                <div class="line">
+                                    <div class="txt">
+                                        <h6><a href="gout1.html">Le zesté</a></h6>
+                                        <p>Thé vert citron</p>
+                                        <p class="prix">6,5€</p>
+                                        <a href="gout6.html"><div id="gout6" class="gout"></div> </a>
+                                    </div>
+                                </div>
+                                <div class="line">
+                                    <div class="txt">
+                                        <h6><a href="gout1.html">NEW L'exfoliant</a></h6>
+                                        <p>Fruits rouges et graines</p>
+                                        <p class="prix">6,5€</p>
+                                        <a href="gout7.html"><div id="gout7" class="gout"></div></a>
+                                    </div>
+                                </div>
 
-        </div>
+                            </div>
 
         <div class="ligne">
             <div class="fond">
                 <div class="rectangle">
                     <div class="bloc">
-                        <h6>Le p'tit chouchou</h6>
+                       <h6><a href="gout1.html">Le chouchou</a></h6>
                         <p>Chouchou caramel</p>
                         <p class="prix">6,5€</p>
-                        <div id="gout1" class="gout"></div> 
+                        <a href="gout1.html"><div id="gout1" class="gout"></div></a> 
                     </div>
                     <div class="bloc">
-                        <h6>Le fripouille</h6>
+                        <h6><a href="gout2.html">Le fripouille</a></h6>
                         <p>Bêtise d'Eulalie</p>
                         <p class="prix">6,5€</p>
-                        <div id="gout2" class="gout"></div> 
+                        <a href="gout2.html"><div id="gout2" class="gout"></div> </a>
                     </div>
                     <div class="bloc">
-                        <h6>Peau de pêche</h6>
-                        <p>Thé vert pêche</p>
+                        <h6><a href="gout3.html">Peau de pêche</a></h6>
+                        <p>Thé vert pêche Melba</p>
                         <p class="prix">6,5€</p>
-                        <div id="gout3"class="gout"></div> 
+                        <a href="gout3.html"><div id="gout3"class="gout"></div> </a>
                     </div>
                     <div class="bloc">
-                        <h6>Le réveil</h6>
+                        <h6><a href="gout4.html">Le givré</a></h6>
                         <p>Infusion petit Loïc</p>
                         <p class="prix">6,5€</p>
-                        <div id="gout4" class="gout"></div> 
+                        <a href="gout4.html"><div id="gout4" class="gout"></div> </a>
                     </div>
                 </div>
             </div>
@@ -283,22 +309,22 @@
             <div class="fond">
                 <div class="rectangle">
                     <div class="bloc">
-                        <h6>Thé 'zen</h6>
+                        <h6><a href="gout5.html">Thé'zen</a></h6>
                         <p>Mystère lavande</p>
                         <p class="prix">6,5€</p>
-                        <div id="gout5" class="gout"></div> 
+                        <a href="gout5.html"><div id="gout5" class="gout"></div> </a>
                     </div>
                     <div class="bloc">
-                        <h6>Le fripouille</h6>
-                        <p>Bêtise d'Eulalie</p>
+                        <h6><a href="gout6.html">Le zesté</a></h6>
+                        <p>Thé vert citron</p>
                         <p class="prix">6,5€</p>
-                        <div id="gout6" class="gout"></div> 
+                        <a href="gout6.html"><div id="gout6" class="gout"></div> </a>
                     </div>
                     <div class="bloc">
-                        <h6>L'exfoliant</h6>
+                        <h6><a href="gout7.html"> NEW L'exfoliant</a></h6>
                         <p>Fruits rouges et graines</p>
                         <p class="prix">6,5€</p>
-                        <div id="gout7" class="gout"></div> 
+                        <a href="gout7.html"><div id="gout7" class="gout"></div> </a>
                     </div>
                 </div>
             </div>
@@ -310,18 +336,18 @@
     
     <div id="noustrouver" class="slide">
         <div class="titre">
-            <h3>Trouver un point de vente</h3>
+            <h2>Trouver un point de vente</h2>
         </div>
         <div class="container">
             <div class="left">
                 <div id="cadre"></div>
-                <div id="carte"></div>
+                <a href="https://www.google.be/maps/place/TeaLou+SRL/@50.6736729,4.0667874,15z/data=!3m1!4b1!4m5!3m4!1s0x47c3b33fa3a7470f:0x100b815a092cb160!8m2!3d50.6736732!4d4.0755207?hl=fr" target="_blank"><div id="carte"></div></a>
             </div>
             <div class="right" id="tmagasin">
                 <div class="margin">
-                    <h3>Jusqu’à 3 magasins et au moins 10 revendeurs </h3>
+                    <h3>Jusqu’à 4 magasins et au moins 10 revendeurs </h3>
                     <p>Pour trouver les produits TEA’MOUSSE, rendez-vous dans les magasins Tealou et dans les différents points de vente revendeurs de nos produits...</p>
-                    <p>Cliquez sur les points de la carte pour connaître les bonnes adresses! </p>
+                    <p>Cliquez sur la carte pour connaître les bonnes adresses! </p>
             
                     <button><a href="#contact">Nous contacter</a></button>  
                 </div>
@@ -329,7 +355,7 @@
                 <div id="adresse">
                     <h3>Boutique Tealou</h3>
                     <p>Rue Noir Mouchon 80,</p>
-                    <p>7850  Petit-Enghien</p>
+                    <p>7850  Petit-Enghien (BE)</p>
                     <p>Tel : 024567894</p>
                 </div>
             </div>
@@ -338,7 +364,7 @@
 
     <div id="contact" class="slide">
         <div class="titre">
-            <h3>Nous contacter</h3>
+            <h2>Nous contacter</h2>
         </div>
 
         <div id="contenu">
@@ -353,43 +379,54 @@
                     <input type="text" id="name" placeholder="Nom - Prénom">
                     <input type="mail" id="mail" placeholder="Votre adresse e-mail">
                     <input type="text" id="sujet" placeholder="Sujet de votre message">
-                    <input type="textarea" placeholder="Votre message">
+                    <textarea name="message" id="message" placeholder="Votre message"></textarea>
                     <input type="submit" >
                 </form>
-                </div>
+            </div>
 
                 <div id="magasins">
-                    <div class="adresse">
-                        <div class="lieu">
-                            Petit-Enghien
+                    <div class="adress">
+                        <div class="adresse">
+                            <div class="lieu">
+                                Enghien
+                            </div>
+                            <div class="coord">
+                                Rue de Bruxelles 37,<br>
+                                7850  Enghien (BE)<br>
+                                Tel : 024567894
+                            </div>
                         </div>
-                        <div class="coord">
-                            Rue Noir Mouchon 80,<br>
-                            7850  Petit-Enghien<br>
-                            Tel : 024567894
+                        <div class="adresse">
+                            <div class="lieu">
+                                Petit-Enghien
+                            </div>
+                            <div class="coord">
+                                Rue Noir Mouchon 80,<br>
+                                7850  Petit-Enghien (BE)<br>
+                                Tel : 024567894
+                            </div>
+                        </div>
+                        <div class="adresse">
+                            <div class="lieu">
+                                La Louvière
+                            </div>
+                            <div class="coord">
+                                Rue Noir Mouchon 80,<br>
+                                7850  Petit-Enghien (BE)<br>
+                                Tel : 024567894
+                            </div>
+                        </div>
+                        <div class="adresse">
+                            <div class="lieu">
+                                Quevaucamp
+                            </div>
+                            <div class="coord">
+                                Rue Noir Mouchon 80,<br>
+                                7850  Petit-Enghien (BE)<br>
+                                Tel : 024567894
+                            </div>
                         </div>
                     </div>
-                    <div class="adresse">
-                        <div class="lieu">
-                            La Louvière
-                        </div>
-                        <div class="coord">
-                            Rue Noir Mouchon 80,<br>
-                            7850  Petit-Enghien<br>
-                            Tel : 024567894
-                        </div>
-                    </div>
-                    <div class="adresse">
-                        <div class="lieu">
-                            Quevaucamp
-                        </div>
-                        <div class="coord">
-                            Rue Noir Mouchon 80,<br>
-                            7850  Petit-Enghien<br>
-                            Tel : 024567894
-                        </div>
-                    </div>
-                    
                  </div>
             
         </div>
@@ -397,7 +434,7 @@
 
 
 
-
+ </div>
 
         <footer>
             <div class="CV">
@@ -407,15 +444,15 @@
                 <div class="infos">
                     <p>Tealou (siège social)</p>
                     <p>Rue noir mouchon 80,</p>
-                    <p>7850 Petit-Enghien</p>
+                    <p>7850 Petit-Enghien (BE)</p>
                     <p>024567894</p>
                     <p>teamousse@info.be</p>
                 </div>
             </div>
             
             <div id="condition">
-                <a href="">Conditions</a>
-                <a href="">Mentions légales</a>
+                <a href="condition.html">Conditions</a>
+                <a href="confi.html">Mentions légales</a>
             </div>
             <div id="reseau">
                 <p>Réseaux sociaux :</p>
@@ -428,19 +465,19 @@
             </div>
             
         </footer>  
-        <div id="copy">
-            <div id="menuCopy">
-                <ul>
-                    <li><a href="#accueil">Accueil</a></li>-
-                    <li><a href="#apropos">À propos</a></li>-
-                    <li><a href="#nosproduits">Nos produits</a></li>-
-                    <li><a href="#noustrouver">Nous trouver</a></li>-
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+        
+            <div id="copy">
+                <div id="menuCopy">
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>-
+                        <li><a href="#apropos">À propos</a></li>-
+                        <li><a href="#nosproduits">Nos produits</a></li>-
+                        <li><a href="#noustrouver">Nous trouver</a></li>-
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <p>Copyright@Tea'mousse 2022 - Maurine Duray</p>
             </div>
-            <p>Copyright@Tea'mousse 2022 - Maurine Duray</p>
-        </div>
-    </div>
     
     
 </body>

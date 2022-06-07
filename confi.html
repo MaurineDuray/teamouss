@@ -1,0 +1,198 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEA'MOUSSE</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<script>
+    window.addEventListener("load",()=>{
+
+        const burger=document.querySelector("#ongletMenu")
+            const menu=document.querySelector("#menuResponsive")
+            console.log("menu")
+            burger.addEventListener("click",()=>{
+                menu.classList.toggle("menuON");
+            })
+        
+            
+            const links = document.querySelectorAll(".items")
+           
+            links.forEach(link => {
+                link.addEventListener('click',()=>{
+                    menu.classList.remove("menuON");
+                })
+            })
+
+        const home = document.querySelector("#accueil")
+        const about = document.querySelector("#apropos")
+        const product = document.querySelector("#nosproduits")
+        const trouver = document.querySelector("#noustrouver")
+        const contact = document.querySelector("#contact")
+        
+        const trait1 = document.querySelector("#niveau #t1")
+        const trait2 = document.querySelector("#niveau #t2")
+        const trait3 = document.querySelector("#niveau #t3")
+        const trait4 = document.querySelector("#niveau #t4")
+        const trait5 = document.querySelector("#niveau #t5")
+
+        const A = document.querySelector("#A")
+        const B = document.querySelector("#B")
+        const C = document.querySelector("#C")
+        const D = document.querySelector("#D")
+        var scrolling 
+        window.addEventListener('scroll',()=>{
+            scrolling = document.documentElement.scrollTop || window.scrollY || window.pageYOffset || document.body.scrollTop
+
+            if(scrolling < about.offsetTop ){
+                trait1.classList.add("activ");
+                trait2.classList.remove("activ");
+                trait3.classList.remove("activ");
+                trait4.classList.remove("activ");
+                trait5.classList.remove("activ");
+
+                A.classList.remove("souligne");
+                B.classList.remove("souligne");
+                C.classList.remove("souligne");
+                D.classList.remove("souligne");
+
+            }else if((scrolling > about.offsetTop - 100)&(scrolling < product.offsetTop - 100)){
+                trait1.classList.remove("activ");
+                trait2.classList.add("activ");
+                trait3.classList.remove("activ");
+                trait4.classList.remove("activ");
+                trait5.classList.remove("activ");
+
+                A.classList.add("souligne");
+                B.classList.remove("souligne");
+                C.classList.remove("souligne");
+                D.classList.remove("souligne");
+
+
+            }else if((scrolling > product.offsetTop - 100)&(scrolling <trouver.offsetTop - 100)){
+                trait1.classList.remove("activ");
+                trait2.classList.remove("activ");
+                trait3.classList.add("activ");
+                trait4.classList.remove("activ");
+                trait5.classList.remove("activ");
+
+                A.classList.remove("souligne");
+                B.classList.add("souligne");
+                C.classList.remove("souligne");
+                D.classList.remove("souligne");
+
+            }else if((scrolling > trouver.offsetTop - 100)&(scrolling <contact.offsetTop - 100)){
+                trait1.classList.remove("activ");
+                trait2.classList.remove("activ");
+                trait3.classList.remove("activ");
+                trait4.classList.add("activ");
+                trait5.classList.remove("activ");
+
+                A.classList.remove("souligne");
+                B.classList.remove("souligne");
+                C.classList.add("souligne");
+                D.classList.remove("souligne");
+
+            }else if(scrolling > contact.offsetTop - 100){
+                trait1.classList.remove("activ");
+                trait2.classList.remove("activ");
+                trait3.classList.remove("activ");
+                trait4.classList.remove("activ");
+                trait5.classList.add("activ");
+
+                A.classList.remove("souligne");
+                B.classList.remove("souligne");
+                C.classList.remove("souligne");
+                D.classList.add("souligne");
+            }
+            
+        })
+
+
+    })
+    
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
+<script src="app.js"></script>
+<body>
+
+    
+
+    <nav>
+        <a id="home" href="index.html#accueil"></a>
+        <ul>
+            <li id="A"><a href="index.html#apropos">À propos</a></li>
+            <li id="B"><a href="index.html#nosproduits">Nos produits</a></li>
+            <li id="menuAccueil"><a href="index.html#accueil"></a></li>
+            <li id="C"><a href="index.html#noustrouver">Nous trouver</a></li>
+            <li id="D"><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+        <button id="ongletMenu"><p>Menu</p></button>
+
+        <div id="menuResponsive">
+            <ul>
+                <li><a href="index.html#accueil" class="items">Accueil</a></li>
+                <li><a href="index.html#apropos" class="items">À propos</a></li>
+                <li><a href="index.html#nosproduits" class="items">Nos produits</a></li>
+                <li><a href="index.html#noustrouver" class="items">Nous trouver</a></li>
+                <li><a href="index.html#contact" class="items">Contact</a></li>
+            </ul>
+
+        </div>
+
+  
+
+ 
+   
+
+    
+
+
+    <div id="confi" class="slide">
+        <div class="wrapper">
+            <h3>Politique de confidentialité</h3>
+        <p>La présente politique de confidentialité décrit la façon dont vos informations
+            personnelles sont recueillies, utilisées et partagées lorsque vous vous rendez sur teamousse.duray.info ou que vous y effectuez un achat.
+            <br>
+            INFORMATIONS PERSONNELLES RECUEILLIES
+            Lorsque vous vous rendez sur le site, nous recueillons automatiquement certaines informations concernant votre appareil, notamment des informations sur votre navigateur web, votre adresse IP, votre fuseau horaire et certains des cookies qui sont installés sur votre appareil.
+            <br>
+            COMMENT UTILISONS-NOUS VOS INFORMATIONS PERSONNELLES ?
+            Nous utilisons les informations sur la commande que nous recueillons pour traiter toute commande passée par le biais du site (y compris pour traiter vos informations de paiement, organiser l'expédition de votre commande, vous fournir des factures et/ou des confirmations de commande).
+            <br>
+            Nous utilisons les informations sur l'appareil que nous recueillons pour évaluer les fraudes ou risques potentiels et, de manière plus générale, pour améliorer et
+            optimiser notre site.
+            <br>
+            Nous partageons vos informations personnelles avec des tiers qui nous aident à les utiliser aux fins décrites précédemment. Par exemple, nous utilisons Shopify pour héberger notre boutique en ligne. Pour en savoir plus sur l'utilisation de vos Informations personnelles par Shopify, veuillez consulter la page suivante : https://www.shopify.fr/legal/confidentialite. Nous utilisons également Google Analytics pour mieux comprendre comment nos clients utilisent le site. Pour en savoir plus sur l'utilisation de vos informations personnelles par Google, veuillez consulter la page suivante : https://www.google.com/intl/fr/policies/privacy/. Vous pouvez aussi désactiver Google Analytics ici : https://tools.google.com/dlpage/gaoptout.
+            <br>
+            Enfin, il se peut que nous partagions aussi vos informations personnelles pour
+            respecter les lois et règlementations applicables, répondre à une assignation, à un mandat de perquisition ou à toute autre demande légale de renseignements que nous recevons, ou pour protéger nos droits Advertising Initiative (NAI) à l'adresse suivante : http://www.networkadvertising.org/understanding-online-advertising/howdoes-it-work.
+            <br>
+            VOS DROITS
+            Si vous êtes résident(e) européen(ne), vous disposez d'un droit d'accès aux
+            informations personnelles que nous détenons à votre sujet et vous pouvez
+            demander à ce qu'elles soient corrigées, mises à jour ou supprimées. Si vous
+            souhaitez exercer ce droit, veuillez nous contacter au moyen des coordonnées
+            précisées ci-dessous. Par ailleurs, si vous êtes résident(e) européen(ne), notez que nous traitons vos informations dans le but de remplir nos obligations contractuelles à votre égard (par exemple si vous passez une commande sur le site) ou de poursuivre nos intérêts commerciaux légitimes, énumérés ci-dessus.
+            <br>
+            RÉTENTION DES DONNÉES
+            Lorsque vous passez une commande par l'intermédiaire du site, nous conservons les informations sur votre commande dans nos dossiers, sauf si et jusqu'à ce que vous nous demandiez de les supprimer.
+            <br>
+            CHANGEMENTS
+            Nous pouvons être amenés à modifier la présente politique de confidentialité de
+            temps à autre afin d'y refléter, par exemple, les changements apportés à nos
+            pratiques ou pour d'autres motifs opérationnels, juridiques ou réglementaires.
+            <br>
+            NOUS CONTACTER
+            Pour en savoir plus sur nos pratiques de confidentialité, si vous avez des questions ou si vous souhaitez déposer une réclamation, veuillez nous contacter par e-mail à teamousse@info.be.</p>
+    <button><a href="index.html#contact">Retour </a></button>
+    </div>
+</div>
+</body></html>

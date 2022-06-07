@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    window.addEventListener("load",()=>{
+
+        const burger=document.querySelector("#ongletMenu")
+            const menu=document.querySelector("#menuResponsive")
+            console.log("menu")
+            burger.addEventListener("click",()=>{
+                menu.classList.toggle("menuON");
+            })
+        
+
+        const home = document.querySelector("#accueil")
+        const about = document.querySelector("#apropos")
+        const product = document.querySelector("#nosproduits")
+        const trouver = document.querySelector("#noustrouver")
+        const contact = document.querySelector("#contact")
+        
+        const trait1 = document.querySelector("#niveau #t1")
+        const trait2 = document.querySelector("#niveau #t2")
+        const trait3 = document.querySelector("#niveau #t3")
+        const trait4 = document.querySelector("#niveau #t4")
+        const trait5 = document.querySelector("#niveau #t5")
+
+        const A = document.querySelector("#A")
+        const B = document.querySelector("#B")
+        const C = document.querySelector("#C")
+        const D = document.querySelector("#D")
+        var scrolling 
+        window.addEventListener('scroll',()=>{
+            scrolling = document.documentElement.scrollTop || window.scrollY || window.pageYOffset || document.body.scrollTop
+
+            if(scrolling < about.offsetTop ){
+                trait1.classList.add("activ");
+                trait2.classList.remove("activ");
+                trait3.classList.remove("activ");
+                trait4.classList.remove("activ");
+                trait5.classList.remove("activ");
+
+                A.classList.remove("souligne");
+                B.classList.remove("souligne");
+                C.classList.remove("souligne");
+                D.classList.remove("souligne");
+
+            }else if((scrolling > about.offsetTop - 100)&(scrolling < product.offsetTop - 100)){
+                trait1.classList.remove("activ");
+                trait2.classList.add("activ");
+                trait3.classList.remove("activ");
+                trait4.classList.remove("activ");
+                trait5.classList.remove("activ");
+
+                A.classList.add("souligne");
+                B.classList.remove("souligne");
+                C.classList.remove("souligne");
+                D.classList.remove("souligne");
+
+
+            }else if((scrolling > product.offsetTop - 100)&(scrolling <trouver.offsetTop - 100)){
+                trait1.classList.remove("activ");
+                trait2.classList.remove("activ");
+                trait3.classList.add("activ");
+                trait4.classList.remove("activ");
+                trait5.classList.remove("activ");
+
+                A.classList.remove("souligne");
+                B.classList.add("souligne");
+                C.classList.remove("souligne");
+                D.classList.remove("souligne");
+
+            }else if((scrolling > trouver.offsetTop - 100)&(scrolling <contact.offsetTop - 100)){
+                trait1.classList.remove("activ");
+                trait2.classList.remove("activ");
+                trait3.classList.remove("activ");
+                trait4.classList.add("activ");
+                trait5.classList.remove("activ");
+
+                A.classList.remove("souligne");
+                B.classList.remove("souligne");
+                C.classList.add("souligne");
+                D.classList.remove("souligne");
+
+            }else if(scrolling > contact.offsetTop - 100){
+                trait1.classList.remove("activ");
+                trait2.classList.remove("activ");
+                trait3.classList.remove("activ");
+                trait4.classList.remove("activ");
+                trait5.classList.add("activ");
+
+                A.classList.remove("souligne");
+                B.classList.remove("souligne");
+                C.classList.remove("souligne");
+                D.classList.add("souligne");
+            }
+            
+        })
+
+
+    })
+    
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
+<script src="app.js"></script>
+<body>
+    <nav>
+        <a id="home" href="index.html#accueil"></a>
+        <ul>
+            <li id="A"><a href="index.html#apropos">À propos</a></li>
+            <li id="B"><a href="index.html#nosproduits">Nos produits</a></li>
+            <li id="menuAccueil"><a href="index.html#accueil"></a></li>
+            <li id="C"><a href="index.html#noustrouver">Nous trouver</a></li>
+            <li id="D"><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+        <button id="ongletMenu"><p>Menu</p></button>
+
+        <div id="menuResponsive">
+            <ul>
+                <li><a href="index.html/#accueil">Accueil</a></li>
+                <li><a href="index.html#apropos">À propos</a></li>
+                <li><a href="index.html#nosproduits">Nos produits</a></li>
+                <li><a href="index.html#noustrouver">Nous trouver</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+        </div>
+
+        <div class="slide" id="slide1">
+            <div class="group">
+                <div class="gauche" id="savongauche">
+                    <div class="savon" id="sav1"></div>
+                </div>
+                <div class="droite" id="savondroite">
+                    <div class="content">
+                        <h2>Le Fripouille</h2>
+                        <h3>Senteur: Bêtises d'Eulalie</h3>
+                        <div class="desc"><p>
+                            <h6>Description :</h6>
+   Nos savons sont composés d’ingrédients naturels : Tensioactifs SCI pour que ça mousse, de l’eau car on en met partout, une huile végétale qui hydrate la peau, un thé de Tealou et une huile essentielle ou fragrance rappelant le thé choisi pour sentir super bon, le tout dans un emballage intelligent ou recyclable !
+
+    <br><br>Ingrédients :
+    Tensioactifs SCI (Sodium cocoyl isethio- nate), eau, huile végétale (coco, jojoba), huile essentielle, infusion (Tealou).
+   
+
+
+                        </p></div><br>
+                        <p id="price"> 6,5 €</p><p id="eshop">Bientôt disponible sur l'e-shop !</p>
+                        <button><a href="index.html#noustrouver">Acheter ce produit</a></button>
+
+                        <button><a href="index.html#nosproduits">Retour</a></button>
+                </div>
+            </div>
+            </div>
+
+            
+        </div>
+        
+        
+</body>
+</html>
