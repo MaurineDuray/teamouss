@@ -47,6 +47,7 @@ html,body{
     opacity: 100%;
     overflow: hidden;
     
+    display: none;
 }
 
 .anim-bloc{
@@ -346,7 +347,7 @@ button a{
     display: none;
 }
 .ligne{
-    height: 30vh;
+    height: 33vh;
     width: 100%;
     margin-top: 20px;
     
@@ -389,7 +390,7 @@ h6 a{
 }
 .bloc h6 a{
     font-family: var(--script);
-    font-size:24pt;
+    font-size:20pt;
     cursor: pointer;
     color: white;
 }
@@ -529,14 +530,18 @@ h6 a{
     font-family: var(--normal);
     margin-bottom: 25px;
     border-radius: 20px 0px 0px 20px;
+    
 }
 #adresse h3{
     font-family: var(--normal);
     font-weight: bold;
     color: var(--taupe-foncé);
     padding-bottom: 10px;
+    text-align: left;
 }
-
+#adresse h3, #adresse p{
+    margin-left: 20px;
+}
 
 
 
@@ -624,6 +629,11 @@ textarea{
 .adresse{
     margin-bottom: 30px;
 
+}
+#boutique{
+    color: var(--taupe-foncé);
+    margin-bottom: 25px;
+    font-size:20pt
 }
 .lieu{
     font-family: var(--script);
@@ -715,7 +725,7 @@ footer{
     min-height: 30px;
     background-color: var(--taupe-foncé);
     z-index: 55;
-    display: flex;
+   
     font-family: var(--normal);
     font-size: 10pt;
     line-height: 30px;
@@ -723,9 +733,10 @@ footer{
     
 }
 #menuCopy{
-    width: 100%;
+    width: 50;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 #menuCopy ul{
     width: 50vh;
@@ -747,6 +758,7 @@ footer{
 #copy p{
     text-align: center;
     color: white;
+    margin-top: -10px;
 }
 
 /************************Gout1********************/
@@ -769,6 +781,9 @@ footer{
 }
 .slide h3{
     font-size: 16pt;
+}
+#slide1 {
+    font-size: 11pt;
 }
 #price{
     font-family: var(--script);
@@ -800,10 +815,45 @@ footer{
     width:50vh;
     height: 50vh;
 
-    background-image: url(images/imageAccueil.jpg);
+   
+}
+
+#sav1{
+    background-image: url(images/sav1.JPG);
     background-position: center;
     background-size: cover;
 }
+#sav2{
+    background-image: url(images/sav2.JPG);
+    background-position: center;
+    background-size: cover;
+}
+#sav3{
+    background-image: url(images/sav3.JPG);
+    background-position: center;
+    background-size: cover;
+}
+#sav4{
+    background-image: url(images/sav4.JPG);
+    background-position: center;
+    background-size: cover;
+}
+#sav5{
+    background-image: url(images/sav5.JPG);
+    background-position: center;
+    background-size: cover;
+}
+#sav6{
+    background-image: url(images/sav6.JPG);
+    background-position: center;
+    background-size: cover;
+}
+#sav7{
+    background-image: url(images/sav7.JPG);
+    background-position: center;
+    background-size: cover;
+}
+
 .droite{
     width: 50%;
     display: flex;
@@ -829,8 +879,12 @@ footer{
     
 }
 
+#acheter{
+    background-color: var(--taupe-foncé);
+    margin-right: 20px;
+}
 
-/************************Gout1********************/
+
 
 .wrapper{
     width: 80%;
