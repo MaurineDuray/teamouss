@@ -17,7 +17,7 @@
 
 *{
 width: 100%;
-margin: 0 ;
+margin: 0;
 }
 
 a{
@@ -155,21 +155,23 @@ background-image: url(images/vignetteMenuAccueil.png);
     transform: translateX(-50%);
     text-align: center;
     font-family: var(--script);
-    font-size: 35px;
+    font-size: 30px;
     color: white;
 }
 #decouvrir{
     background-color: white;
     position: absolute;
     bottom: -30px;
-    width: auto;
+    width: fit-content;
     border-radius: 20px;
     height: 50px;
-    padding: 25px;
+    padding: 25px 50px 25px 50px;
     left: 50%;
     transform: translate(-50%);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    line-height: -10px;
+    
+    display: flex;
+    justify-content: center;
 }
 #decouvrir:hover{
     bottom:-20px;
@@ -182,6 +184,7 @@ background-image: url(images/vignetteMenuAccueil.png);
 #decouvrir a{
     text-decoration: none;
     color: var(--taupe-foncé);
+    text-align: center;
 }
 #reseauxSociaux{
     position: absolute;
@@ -227,6 +230,7 @@ background-image: url(images/vignetteMenuAccueil.png);
     background-image: url(images/BULLES-BasDroite.png), url(images/fond.jpg);
     background-position: left bottom;
     background-size: cover, cover;
+    
     
     
 }
@@ -290,11 +294,13 @@ background-image: url(images/vignetteMenuAccueil.png);
     box-sizing: border-box;
 }
 .margin{
-    width: 65%;
+    width: 100%;
     height: auto;
-    margin-left: 80px;
-    padding: 20px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+   
     box-sizing: border-box;
+  
 
 }
 .margin h3{
@@ -495,6 +501,7 @@ h6 a{
 #tmagasin{
     display: flex;
     flex-wrap: wrap;
+    
 }
 
 #cadre{
@@ -541,6 +548,7 @@ h6 a{
 }
 #adresse h3, #adresse p{
     margin-left: 20px;
+    text-align: left;
 }
 
 
@@ -580,7 +588,7 @@ h6 a{
 form{
     background-color: rgba(233, 222, 214, 1);
     width: 100%;
-    height: 72%;
+    height: 80vh;
     padding: 50px 70px 300px 50px;
     border-radius: 20px;
     box-sizing: border-box;
@@ -733,13 +741,13 @@ footer{
     
 }
 #menuCopy{
-    width: 50;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 #menuCopy ul{
-    width: 50vh;
+    width: 80%;
     display:flex ;
     text-decoration: none;
     text-align: center;
@@ -778,6 +786,9 @@ footer{
 }
 .slide h2{
     font-size: 24pt;
+    width: 80%;
+    transform: translateX(-50%);
+    margin-left: 50%;
 }
 .slide h3{
     font-size: 16pt;
@@ -819,37 +830,37 @@ footer{
 }
 
 #sav1{
-    background-image: url(images/sav1.JPG);
+    background-image: url(images/sav1.jpg);
     background-position: center;
     background-size: cover;
 }
 #sav2{
-    background-image: url(images/sav2.JPG);
+    background-image: url(images/sav2.jpg);
     background-position: center;
     background-size: cover;
 }
 #sav3{
-    background-image: url(images/sav3.JPG);
+    background-image: url(images/sav3.jpg);
     background-position: center;
     background-size: cover;
 }
 #sav4{
-    background-image: url(images/sav4.JPG);
+    background-image: url(images/sav4.jpg);
     background-position: center;
     background-size: cover;
 }
 #sav5{
-    background-image: url(images/sav5.JPG);
+    background-image: url(images/sav5.jpg);
     background-position: center;
     background-size: cover;
 }
 #sav6{
-    background-image: url(images/sav6.JPG);
+    background-image: url(images/sav6.jpg);
     background-position: center;
     background-size: cover;
 }
 #sav7{
-    background-image: url(images/sav7.JPG);
+    background-image: url(images/sav7.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -945,11 +956,7 @@ footer{
 #ongletMenu{
     display: none;
 }
-@media all and (max-width:950px){
-#apropos .left{
-    margin-top: 50px;
-}
-}
+
 @media all and (max-width:750px){
     
     h3{
@@ -961,7 +968,10 @@ footer{
     .script{
         font-size: 25pt;
     }
-    
+    #carte{
+        margin-top: -100px;
+        margin-bottom: -100px;
+    }
 
 
     .ligne{
@@ -1009,9 +1019,46 @@ footer{
         flex-wrap: wrap;
     }
     .left{
-        height: 60vh;
-        padding-top: 100px;
+        width: 100%;
+        max-height: 100vh;
+        position: relative;
+        margin-top: 200px;
+        display: flex;
+        justify-content:center ;
+        padding: 0;
     }
+    .right{
+        width: 100%;
+        min-height: 100%;
+        position: relative;
+        margin: 0 auto;
+        
+
+        text-align: center;
+    }
+
+    
+    #image{
+        width: 100%; 
+        height: 50vh;
+        margin-left: -30%;
+        margin-top: -200;
+        background-image: url(images/photo-aPropos.png); 
+        background-repeat: no-repeat;  
+        background-size: contain;
+      
+        
+       
+        box-sizing: border-box;
+        background-color: transparent;
+    
+    }
+    
+    #carte{
+        height: 200px;
+        margin-bottom: 200px;
+    }
+    
     .vide{
         display: none;
     }
@@ -1084,12 +1131,18 @@ footer{
         display: none;
     }
     #decouvrir{
+        padding: 20px;
         width: 60%;
-        font-size: 10pt;
+        font-size: 12pt;
+    }
+    #tmagasin{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 280px;
     }
     .left{
         width: 100%;
-        min-height: 100%;
+        max-height: 100vh;
         position: relative;
         margin: 0 auto;
         display: flex;
@@ -1100,17 +1153,18 @@ footer{
         width: 100%;
         min-height: 100%;
         position: relative;
-        margin: 0 auto;
-        margin-top: -100px;
+        
+        margin-top: 120px;
+        padding: 0;
     }
-    .right .margin{
-        width: 80%;
-        margin: 0 auto;
+    .margin{
+        margin-top: -80px;
     }
 
     #image{
         width: 100%; 
-        margin-left: -25%;
+        height: 50vh;
+        margin-left: -30%;
         margin-top: 0;
         background-image: url(images/photo-aPropos.png); 
         background-repeat: no-repeat;  
@@ -1170,7 +1224,9 @@ footer{
    #cadre{
        display: none;
    }
-
+   #carte{
+    margin-top: 100px;
+}
 
    .vide{
        display: none;
