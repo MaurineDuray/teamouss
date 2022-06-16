@@ -12,6 +12,12 @@
 <script>
     window.addEventListener("load",()=>{
 
+        const close = document.querySelector("#close")
+        const loadpage = document.querySelector("#loadingpage")
+        close.addEventListener("click",()=>{
+                loadpage.classList.add("loadclose");
+            })
+
         const burger=document.querySelector("#ongletMenu")
             const menu=document.querySelector("#menuResponsive")
             console.log("menu")
@@ -120,10 +126,11 @@
 <script src="app.js"></script>
 <body>
 
-    <div class="load-container">
+    <div class="load-container" id="loadingpage">
         <div class="anim-bloc">
             <img src="images/AnimTeaMousse.gif" alt="logo animé">
-        </div>
+           
+        </div> <a id="close" href="#"> Passer l'introduction </a>
     </div>
 
 
@@ -477,7 +484,7 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <p> &copy;Tea'mousse 2022 - Maurine Duray</p>
+                <p> &copy;Tea'mousse 2022 - Maurine Duray - Site fictif réalisé dans le cadre scolaire</p>
                
             </div>
     
